@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal popup</title>
+    <style>
+        button {
+            border:none;
+            cursor:pointer;
+            box-sizing:border-box;
+        }
+        .modal-open {
+            background:#3e3e3e;
+            padding:7px 13px;
+            font-size:15px;
+            color:#fff;
+            border-radius:5px;
+        }
+        .modal {
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity:0;
+            visibility:hidden;
+            transform:scale(1.1);
+            transition:visibility 0s, opacity 0.25s, transform 0.25s;
+        }
+        .modal-body {
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            background:#fff;
+            width:300px;
+            padding:20px;
+            border-radius:20px;
+        }
+        .modal-content {
+            position:relative;
+        }
+        .show-modal {
+            opacity: 1;
+            visibility: visible;
+            transform:scale(1);
+        }
+        .modal-close {
+            position:absolute;
+            top:-20px; 
+            right:0;
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <button type="button" class="modal-open">Click modal</button>
+
+    <div class="modal">
+        <div class="modal-body">
+            <div class="modal-content">
+                <h1>modal popup 입니다.</h1>
+                <button type="button" class="modal-close" aria-label="close">x</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
